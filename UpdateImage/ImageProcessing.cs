@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Threading.Tasks;
 
 namespace UpdateImage
 {
@@ -17,27 +12,11 @@ namespace UpdateImage
         }
         public string ToMainColors(string imageFile)
         {
-            try
-            {
-                return process.readAndModificate(imageFile);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return null;
+            return process.readAndModify(imageFile);
         }
-        public Task<string> ToMainColorsAsync(string imageFile)
+        public async Task<string> ToMainColorsAsync(string imageFile)
         {
-            try
-            {
-                return process.readAndModificateAsync(imageFile);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return null;
+            return await process.readAndModifyAsync(imageFile);
         }
     }
 }

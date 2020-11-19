@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using System.Drawing;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace UpdateImage
 {
     class Process : IProccess
     {
-        public string readAndModificate(string imageFile)
+        public string readAndModify(string imageFile)
         {
 
             Bitmap image = new Bitmap(imageFile);
@@ -28,10 +24,14 @@ namespace UpdateImage
             image.Save(saveFile);
             return saveFile;
         }
-        public Task<string> readAndModificateAsync(string imageFile)
+
+
+        public Task<string> readAndModifyAsync(string imageFile)
         {
-            return Task.Run<string>(() => { return readAndModificate(imageFile); });
+            return Task.Run<string>(() => { return readAndModify(imageFile); });
         }
+
+
         private Color chooseMainColor(Color color)
         {
 
@@ -46,8 +46,5 @@ namespace UpdateImage
 
             return Color.FromArgb(0, 0, 255);
         }
-
-
-
     }
 }
