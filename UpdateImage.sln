@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateImage", "UpdateImage\UpdateImage.csproj", "{14A8EBDD-7CB8-4692-A97F-940739B4C7F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateImageTest", "UpdateImageTest\UpdateImageTest.csproj", "{E5D3A14B-BC27-4885-A965-E2CE65F93387}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{14A8EBDD-7CB8-4692-A97F-940739B4C7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14A8EBDD-7CB8-4692-A97F-940739B4C7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14A8EBDD-7CB8-4692-A97F-940739B4C7F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5D3A14B-BC27-4885-A965-E2CE65F93387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5D3A14B-BC27-4885-A965-E2CE65F93387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5D3A14B-BC27-4885-A965-E2CE65F93387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5D3A14B-BC27-4885-A965-E2CE65F93387}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

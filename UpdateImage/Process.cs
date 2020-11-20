@@ -26,12 +26,6 @@ namespace UpdateImage
         }
 
 
-        public Task<string> readAndModifyAsync(string imageFile)
-        {
-            return Task.Run<string>(() => { return readAndModify(imageFile); });
-        }
-
-
         private Color chooseMainColor(Color color)
         {
 

@@ -16,7 +16,7 @@ namespace UpdateImage
         }
         public async Task<string> ToMainColorsAsync(string imageFile)
         {
-            return await process.readAndModifyAsync(imageFile);
+            return await Task.Run(() =>  process.readAndModify(imageFile));
         }
     }
 }
