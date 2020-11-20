@@ -1,7 +1,9 @@
-﻿namespace UpdateImage
+﻿using System.Drawing;
+
+namespace UpdateImage
 {
     interface IProccess
     {
-        string readAndModify(string imageFile);
+        string readAndModify(string path,string imageFile);
     }
 }
