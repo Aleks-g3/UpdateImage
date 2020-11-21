@@ -1,7 +1,5 @@
 ﻿using System.Drawing;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
 
 namespace UpdateImage
 {
@@ -9,11 +7,11 @@ namespace UpdateImage
     {
         private Bitmap image;
 
-        public string readAndModify(string path,string imageFile)
+        public string ReadAndModify(string path, string imageFile)
         {
-            image = new Bitmap(path+imageFile);
-            Match match = Regex.Match(imageFile, @"(\w+)\.(jpg|png|jpeg)$");
-            string saveFile = path + match.Groups[1].Value + "_Processed" + "." + match.Groups[2].Value;
+            image = new Bitmap(path + imageFile);
+            Match match = Regex.Match(imageFile, @"([A-Za-z0-9\-_+/ ]+)\.(jpg|png|jpeg)$");
+            string saveFile = path + match.Value.Replace(match.Groups[1].Value, match.Groups[1].Value + "_Processed");
             for (int x = 0; x < image.Width; x++)
             {
                 for (int y = 0; y < image.Height; y++)
@@ -21,16 +19,11 @@ namespace UpdateImage
                     Color colorPixel = image.GetPixel(x, y);
                     Color setColor = chooseMainColor(colorPixel);
                     image.SetPixel(x, y, setColor);
-                    
-                    
-
                 }
             }
             image.Save(saveFile);
             return saveFile;
-            
         }
-
 
         private Color chooseMainColor(Color color)
         {

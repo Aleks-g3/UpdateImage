@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace UpdateImage
 {
@@ -11,13 +10,15 @@ namespace UpdateImage
         {
             process = new Process();
         }
-        public string ToMainColors(string path,string imageFile)
+
+        public string ToMainColors(string path, string imageFile)
         {
-            return process.readAndModify(path,imageFile);
+            return process.ReadAndModify(path, imageFile);
         }
-        public async Task<string> ToMainColorsAsync(string path,string imageFile)
+
+        public async Task<string> ToMainColorsAsync(string path, string imageFile)
         {
-            return await Task.Run(() =>  process.readAndModify(path,imageFile));
+            return await Task.Run(() => process.ReadAndModify(path, imageFile));
         }
     }
 }

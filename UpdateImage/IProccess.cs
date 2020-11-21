@@ -1,9 +1,7 @@
-﻿using System.Drawing;
-
-namespace UpdateImage
+﻿namespace UpdateImage
 {
     interface IProccess
     {
-        string readAndModify(string path,string imageFile);
+        string ReadAndModify(string path, string imageFile);
     }
 }
