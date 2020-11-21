@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 
 
 
+
 [assembly: AssemblyTitle("UpdateImageTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]

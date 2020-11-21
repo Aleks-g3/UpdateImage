@@ -16,6 +16,7 @@ namespace UpdateImageTest
         [TestMethod]
         public void ToMainColors_withPathAndImageFile_UpdateImage()
         {
+
             result = imageProcessing.ToMainColors("", "Obraz 004.jpg");
             Assert.AreEqual(Expected, result);
         }
