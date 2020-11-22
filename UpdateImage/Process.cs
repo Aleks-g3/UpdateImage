@@ -25,7 +25,6 @@ namespace UpdateImage
 
         private Color chooseMainColor(Color color)
         {
-
             if (color.R > color.G && color.R > color.B)
             {
                 return Color.FromArgb(255, 0, 0);
