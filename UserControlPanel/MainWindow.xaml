@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserControlPanel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="370.253" Width="691.772">
     <Grid>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="172" Margin="40,41,0,0" VerticalAlignment="Top" Width="307"/>
-        <Button x:Name="button" Content="Wczytaj zdjęcie i wybierz główne kolory" HorizontalAlignment="Left" Margin="40,317,0,0" VerticalAlignment="Top" Width="227" Height="46"/>
-        <Button x:Name="button_Copy" Content="Wczytaj zdjęcie i wybierz główne kolory asynchronicznie" HorizontalAlignment="Left" Margin="313,317,0,0" VerticalAlignment="Top" Width="318" Height="46"/>
+        <Image x:Name="image" Source="{Binding ImageFile}" Margin="133,38,245.6,99.8"  Width="307" />
+        <Button x:Name="btnConvertImage" Content="Wczytaj zdjęcie i wybierz główne kolory" HorizontalAlignment="Left" Margin="32,260,0,0" VerticalAlignment="Top" Width="227" Height="46" Click="btnConvertImage_Click"/>
+        <Button x:Name="btnConvertImageAsync" Content="Wczytaj zdjęcie i wybierz główne kolory asynchronicznie" HorizontalAlignment="Left" Margin="305,260,0,0" VerticalAlignment="Top" Width="318" Height="46" Click="btnConvertImageAsync_Click"/>
+        <Label x:Name="lblWait" Visibility="Hidden" Content="Proszę czekać" HorizontalAlignment="Left" Margin="445,215,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

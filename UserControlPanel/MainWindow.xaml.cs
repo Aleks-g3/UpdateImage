@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Win32;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using UserControlPanel.ViewModel;
 
 namespace UserControlPanel
 {
@@ -20,9 +10,46 @@ namespace UserControlPanel
     /// </summary>
     public partial class MainWindow : Window
     {
+        OpenFileDialog openFileDialog = new OpenFileDialog();
+
+        ProcessViewModel viewModel = new ProcessViewModel();
+
         public MainWindow()
         {
+
             InitializeComponent();
+            openFileDialog.Filter = "Image files (*.png;*.jpeg;*.jpg;*.bmp)|*.png;*.jpeg;*.jpg;*.bmp";
+        }
+
+        private void btnConvertImage_Click(object sender, RoutedEventArgs e)
+        {
+            lblWait.Visibility = Visibility.Visible;
+            if (openFileDialog.ShowDialog() == true)
+            {
+
+                viewModel.LoadImage(Path.GetDirectoryName(openFileDialog.FileName), openFileDialog.SafeFileName);
+
+            }
+            DisableButtons();
+        }
+
+        private void btnConvertImageAsync_Click(object sender, RoutedEventArgs e)
+        {
+            lblWait.Visibility = Visibility.Visible;
+            if (openFileDialog.ShowDialog() == true)
+            {
+
+                viewModel.LoadImageAsync(Path.GetDirectoryName(openFileDialog.FileName), openFileDialog.SafeFileName);
+            }
+            DisableButtons();
+        }
+
+        private void DisableButtons()
+        {
+            lblWait.Visibility = Visibility.Hidden;
+            this.DataContext = viewModel;
+            btnConvertImage.IsEnabled = false;
+            btnConvertImageAsync.IsEnabled = false;
         }
     }
 }

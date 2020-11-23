@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace UserControlPanel.Model
 {
-    public class Process: INotifyPropertyChanged
+    public class Process : INotifyPropertyChanged
     {
         private string imageFile;
 
@@ -29,6 +24,7 @@ namespace UserControlPanel.Model
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         private void RaisePropertyChanged(string property)
         {
             if (PropertyChanged != null)

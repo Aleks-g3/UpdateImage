@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using UpdateImage;
 using UserControlPanel.Model;
 
@@ -11,15 +9,21 @@ namespace UserControlPanel.ViewModel
     public class ProcessViewModel
     {
         private ImageProcessing imageProcessing = new ImageProcessing();
+
         private Process process = new Process();
+
         System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+
         private TimeSpan timeTaken;
 
-        public Process Process
+        public string ImageFile
         {
-            get;
-            set;
+            get
+            {
+                return process.ImageFile;
+            }
         }
+
         public void LoadImage(string path, string imageFile)
         {
             timer.Restart();
@@ -28,8 +32,8 @@ namespace UserControlPanel.ViewModel
             timer.Stop();
             timeTaken = timer.Elapsed;
             MessageBox.Show("Czas wykonania : " + timeTaken.ToString(@"m\:ss\.fff"), "OK");
-
         }
+
         public void LoadImageAsync(string path, string imageFile)
         {
             timer.Restart();
@@ -40,3 +44,4 @@ namespace UserControlPanel.ViewModel
             MessageBox.Show("Czas wykonania : " + timeTaken.ToString(@"m\:ss\.fff"), "OK");
         }
     }
+}
