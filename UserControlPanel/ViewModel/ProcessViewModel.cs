@@ -31,7 +31,7 @@ namespace UserControlPanel.ViewModel
             process.ImageFile = imageProcessing.ToMainColors(path, imageFile);
             timer.Stop();
             timeTaken = timer.Elapsed;
-            MessageBox.Show("Czas wykonania : " + timeTaken.ToString(@"m\:ss\.fff"), "OK");
+            MessageBox.Show("Czas wykonania : " + timeTaken.ToString(@"m\:ss\.fff"));
         }
 
         public void LoadImageAsync(string path, string imageFile)
@@ -41,7 +41,7 @@ namespace UserControlPanel.ViewModel
             process.ImageFile = Task.Run(async () => await imageProcessing.ToMainColorsAsync(path, imageFile)).Result;
             timer.Stop();
             timeTaken = timer.Elapsed;
-            MessageBox.Show("Czas wykonania : " + timeTaken.ToString(@"m\:ss\.fff"), "OK");
+            MessageBox.Show("Czas wykonania : " + timeTaken.ToString(@"m\:ss\.fff"));
         }
     }
 }
