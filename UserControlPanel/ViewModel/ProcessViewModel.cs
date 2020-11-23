@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using System.Windows;
 using UpdateImage;
 using UserControlPanel.Model;
 
@@ -23,6 +22,7 @@ namespace UserControlPanel.ViewModel
                 return process.ImageFile;
             }
         }
+
         public string Time
         {
             get
@@ -38,7 +38,7 @@ namespace UserControlPanel.ViewModel
             process.ImageFile = imageProcessing.ToMainColors(imagePath);
             timer.Stop();
             timeTaken = timer.Elapsed;
-            process.Time=timeTaken.ToString(@"m\:ss\.fff");
+            process.Time = timeTaken.ToString(@"m\:ss\.fff");
         }
 
         public void LoadImageAsync(string imagePath)
@@ -48,7 +48,7 @@ namespace UserControlPanel.ViewModel
             process.ImageFile = Task.Run(async () => await imageProcessing.ToMainColorsAsync(imagePath)).Result;
             timer.Stop();
             timeTaken = timer.Elapsed;
-            process.Time= timeTaken.ToString(@"m\:ss\.fff");
+            process.Time = timeTaken.ToString(@"m\:ss\.fff");
         }
     }
 }

@@ -5,6 +5,7 @@ namespace UserControlPanel.Model
     public class Process : INotifyPropertyChanged
     {
         private string imageFile;
+
         private string time;
 
         public string ImageFile
@@ -15,11 +16,12 @@ namespace UserControlPanel.Model
             }
             set
             {
-                    imageFile = value;
-                    RaisePropertyChanged("ImageFile");
+                imageFile = value;
+                RaisePropertyChanged("ImageFile");
 
             }
         }
+
         public string Time
         {
             get

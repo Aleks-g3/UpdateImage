@@ -24,7 +24,7 @@ namespace UpdateImageTest
         [TestMethod]
         public void ToMainColorsAsync_withPathAndImageFile_UpdateImage()
         {
-            result = Task.Run(async () => await imageProcessing.ToMainColorsAsync( "Obraz 004.jpg")).Result;
+            result = Task.Run(async () => await imageProcessing.ToMainColorsAsync("Obraz 004.jpg")).Result;
             Assert.AreEqual(Expected, result);
         }
     }
