@@ -10,7 +10,9 @@ namespace UpdateImageTest
     public class ImageProcessingTests
     {
         private string Expected = string.Format("{0}Resources\\Obraz 004_Processed.jpg", Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\")));
+
         string fileName = string.Format("{0}Resources\\Obraz 004.jpg", Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\")));
+
         private string result;
 
         private ImageProcessing imageProcessing = new ImageProcessing();
