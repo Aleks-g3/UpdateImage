@@ -5,12 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserControlPanel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="370.253" Width="691.772">
+        Title="MainWindow" Height="370.253" Width="807.378" ResizeMode="NoResize">
     <Grid Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
         <Image x:Name="image" Source="{Binding ImageFile}" Margin="133,38,245.6,99.8"  Width="307" />
         <Button x:Name="btnConvertImage" Content="Wczytaj zdjęcie i wybierz główne kolory" HorizontalAlignment="Left" Margin="32,260,0,0" VerticalAlignment="Top" Width="227" Height="46" Click="btnConvertImage_Click"/>
         <Button x:Name="btnConvertImageAsync" Content="Wczytaj zdjęcie i wybierz główne kolory asynchronicznie" HorizontalAlignment="Left" Margin="305,260,0,0" VerticalAlignment="Top" Width="318" Height="46" Click="btnConvertImageAsync_Click"/>
         <Label x:Name="lblWait" Visibility="Hidden" Content="Proszę czekać" HorizontalAlignment="Left" Margin="445,215,0,0" VerticalAlignment="Top"/>
+        <Label Content="Czas wykonania:" HorizontalAlignment="Left" Margin="465,38,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblTime" Content="{Binding Time}" HorizontalAlignment="Left" Margin="566,38,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ścieżka:" HorizontalAlignment="Left" Margin="465,69,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblPath" HorizontalAlignment="Left" Margin="523,69,0,0" VerticalAlignment="Top">
+            <TextBlock Text="{Binding ImageFile}" TextWrapping="WrapWithOverflow"/>
+        </Label>
 
     </Grid>
 </Window>

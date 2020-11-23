@@ -23,25 +23,32 @@ namespace UserControlPanel.ViewModel
                 return process.ImageFile;
             }
         }
-
-        public void LoadImage(string path, string imageFile)
+        public string Time
         {
-            timer.Restart();
-            timer.Start();
-            process.ImageFile = imageProcessing.ToMainColors(path, imageFile);
-            timer.Stop();
-            timeTaken = timer.Elapsed;
-            MessageBox.Show("Czas wykonania : " + timeTaken.ToString(@"m\:ss\.fff"));
+            get
+            {
+                return process.Time;
+            }
         }
 
-        public void LoadImageAsync(string path, string imageFile)
+        public void LoadImage(string imagePath)
         {
             timer.Restart();
             timer.Start();
-            process.ImageFile = Task.Run(async () => await imageProcessing.ToMainColorsAsync(path, imageFile)).Result;
+            process.ImageFile = imageProcessing.ToMainColors(imagePath);
             timer.Stop();
             timeTaken = timer.Elapsed;
-            MessageBox.Show("Czas wykonania : " + timeTaken.ToString(@"m\:ss\.fff"));
+            process.Time=timeTaken.ToString(@"m\:ss\.fff");
+        }
+
+        public void LoadImageAsync(string imagePath)
+        {
+            timer.Restart();
+            timer.Start();
+            process.ImageFile = Task.Run(async () => await imageProcessing.ToMainColorsAsync(imagePath)).Result;
+            timer.Stop();
+            timeTaken = timer.Elapsed;
+            process.Time= timeTaken.ToString(@"m\:ss\.fff");
         }
     }
 }

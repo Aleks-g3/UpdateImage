@@ -17,14 +17,14 @@ namespace UpdateImageTest
         public void ToMainColors_withPathAndImageFile_UpdateImage()
         {
 
-            result = imageProcessing.ToMainColors("", "Obraz 004.jpg");
+            result = imageProcessing.ToMainColors("Obraz 004.jpg");
             Assert.AreEqual(Expected, result);
         }
 
         [TestMethod]
         public void ToMainColorsAsync_withPathAndImageFile_UpdateImage()
         {
-            result = Task.Run(async () => await imageProcessing.ToMainColorsAsync("", "Obraz 004.jpg")).Result;
+            result = Task.Run(async () => await imageProcessing.ToMainColorsAsync( "Obraz 004.jpg")).Result;
             Assert.AreEqual(Expected, result);
         }
     }

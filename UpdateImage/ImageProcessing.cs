@@ -11,14 +11,14 @@ namespace UpdateImage
             process = new Process();
         }
 
-        public string ToMainColors(string path, string imageFile)
+        public string ToMainColors(string imagePath)
         {
-            return process.ReadAndModify(path, imageFile);
+            return process.ReadAndModify(imagePath);
         }
 
-        public async Task<string> ToMainColorsAsync(string path, string imageFile)
+        public async Task<string> ToMainColorsAsync(string imagePath)
         {
-            return await Task.Run(() => process.ReadAndModify(path, imageFile));
+            return await Task.Run(() => process.ReadAndModify(imagePath));
         }
     }
 }

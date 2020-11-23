@@ -27,7 +27,7 @@ namespace UserControlPanel
             if (openFileDialog.ShowDialog() == true)
             {
 
-                viewModel.LoadImage(Path.GetDirectoryName(openFileDialog.FileName), openFileDialog.SafeFileName);
+                viewModel.LoadImage(openFileDialog.FileName);
 
             }
             if (!string.IsNullOrWhiteSpace(viewModel.ImageFile))
@@ -43,7 +43,7 @@ namespace UserControlPanel
             if (openFileDialog.ShowDialog() == true)
             {
 
-                viewModel.LoadImageAsync(Path.GetDirectoryName(openFileDialog.FileName), openFileDialog.SafeFileName);
+                viewModel.LoadImageAsync(openFileDialog.FileName);
             }
             if (!string.IsNullOrWhiteSpace(viewModel.ImageFile))
             {

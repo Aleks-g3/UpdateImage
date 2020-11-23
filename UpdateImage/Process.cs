@@ -5,11 +5,11 @@ namespace UpdateImage
 {
     class Process : IProccess
     {
-        public string ReadAndModify(string path, string imageFile)
+        public string ReadAndModify(string imagePath)
         {
-            Bitmap image = new Bitmap(path + imageFile);
-            Match match = Regex.Match(imageFile, @"([A-Za-z0-9\-_+/ ]+)\.(jpg|png|jpeg)$");
-            string saveFile = path + match.Value.Replace(match.Groups[1].Value, match.Groups[1].Value + "_Processed");
+            Bitmap image = new Bitmap(imagePath);
+            Match match = Regex.Match(imagePath, @"([A-Za-z0-9\-_+/ ]+)\.(jpg|png|jpeg)$");
+            string saveFile = imagePath.Replace(match.Groups[1].Value, match.Groups[1].Value + "_Processed");
             for (int x = 0; x < image.Width; x++)
             {
                 for (int y = 0; y < image.Height; y++)

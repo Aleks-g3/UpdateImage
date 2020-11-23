@@ -2,6 +2,6 @@
 {
     interface IProccess
     {
-        string ReadAndModify(string path, string imageFile);
+        string ReadAndModify(string imagePath);
     }
 }
