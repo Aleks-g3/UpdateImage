@@ -30,7 +30,11 @@ namespace UserControlPanel
                 viewModel.LoadImage(Path.GetDirectoryName(openFileDialog.FileName), openFileDialog.SafeFileName);
 
             }
-            DisableButtons();
+            if (!string.IsNullOrWhiteSpace(viewModel.ImageFile))
+            {
+                DisableButtons();
+            }
+            lblWait.Visibility = Visibility.Hidden;
         }
 
         private void btnConvertImageAsync_Click(object sender, RoutedEventArgs e)
@@ -41,12 +45,15 @@ namespace UserControlPanel
 
                 viewModel.LoadImageAsync(Path.GetDirectoryName(openFileDialog.FileName), openFileDialog.SafeFileName);
             }
-            DisableButtons();
+            if (!string.IsNullOrWhiteSpace(viewModel.ImageFile))
+            {
+                DisableButtons();
+            }
+            lblWait.Visibility = Visibility.Hidden;
         }
 
         private void DisableButtons()
         {
-            lblWait.Visibility = Visibility.Hidden;
             this.DataContext = viewModel;
             btnConvertImage.IsEnabled = false;
             btnConvertImageAsync.IsEnabled = false;
